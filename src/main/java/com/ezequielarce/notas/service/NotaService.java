@@ -31,4 +31,9 @@ public class NotaService {
     public void eliminar(Long id) {
         notaRepository.deleteById(id);
     }
+
+    public List<Nota> obtenerNotasPorArchivada(boolean archivada) {
+        return notaRepository.findByArchivada(archivada);
+    }
+
 }

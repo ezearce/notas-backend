@@ -49,4 +49,14 @@ public class NotaController {
                 .orElseThrow(() -> new RuntimeException("Nota no encontrada"));
     }
 
+    @GetMapping("/activas")
+    public List<Nota> obtenerNotasActivas() {
+        return notaService.obtenerNotasPorArchivada(false);
+    }
+
+    @GetMapping("/archivadas")
+    public List<Nota> obtenerNotasArchivadas() {
+        return notaService.obtenerNotasPorArchivada(true);
+    }
+
 }
