@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/notas")
+@CrossOrigin(origins = "http://localhost:5173")
 public class NotaController {
     private final NotaService notaService;
 
