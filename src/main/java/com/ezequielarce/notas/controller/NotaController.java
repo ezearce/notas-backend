@@ -60,4 +60,24 @@ public class NotaController {
         return notaService.obtenerNotasPorArchivada(true);
     }
 
+    @PostMapping("/{id}/categorias/{categoriaId}")
+    public Nota agregarCategoria(@PathVariable Long id, @PathVariable Long categoriaId){
+        return notaService.agregarCategoria(id, categoriaId);
+    }
+
+    @DeleteMapping("/{id}/categorias/{categoriaId}")
+    public Nota quitarCategoria(@PathVariable Long id, @PathVariable Long categoriaId){
+        return notaService.removerCategoria(id, categoriaId);
+    }
+
+    @GetMapping("/por-categoria/{categoriaId}")
+    public List<Nota> obtenerPorCategoriaId(@PathVariable Long categoriaId){
+        return notaService.obtenerPorCategoriaId(categoriaId);
+    }
+
+    @GetMapping("/por-categoria-nombre/{nombre}")
+    public List<Nota> obtenerPorCategoriaNombre(@PathVariable String nombre){
+        return notaService.obtenerPorCategoriaNombre(nombre);
+    }
+
 }
